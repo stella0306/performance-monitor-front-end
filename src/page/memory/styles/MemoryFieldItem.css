@@ -1,0 +1,25 @@
+/* ===============================
+   📊 MemoryFieldItem - 개별 항목
+   =============================== */
+
+.memory-field-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.memory-field-item:hover {
+  background-color: #f8faff;
+}
+
+.memory-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.memory-value {
+  color: #0066cc;
+  font-weight: 600;
+}

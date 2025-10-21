@@ -1,0 +1,35 @@
+/* ===============================
+   💾 MemoryFetcher - 상태 메시지
+   =============================== */
+
+.memory-loading,
+.memory-error {
+  text-align: center;
+  font-weight: 600;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.memory-loading {
+  color: #555;
+  background-color: #f3f6fb;
+}
+
+.memory-error {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+/* fade-in 공용 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

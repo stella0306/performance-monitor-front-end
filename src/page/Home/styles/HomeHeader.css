@@ -1,0 +1,17 @@
+/* ===============================
+   🏠 헤더 영역
+   =============================== */
+.home-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2b44;
+  margin-bottom: 10px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.home-header p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease forwards;
+}

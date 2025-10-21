@@ -1,0 +1,53 @@
+/* ===============================
+   🎛️ 버튼 영역
+   =============================== */
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* 공통 버튼 스타일 */
+.home-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 버튼별 색상 */
+.home-btn.cpu {
+  background-color: #2b3a55;
+}
+
+.home-btn.cpu:hover {
+  background-color: #3f4d71;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(43, 58, 85, 0.2);
+}
+
+.home-btn.memory {
+  background-color: #4caf50;
+}
+
+.home-btn.memory:hover {
+  background-color: #3e8e41;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.home-btn.github {
+  background-color: #24292e;
+}
+
+.home-btn.github:hover {
+  background-color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

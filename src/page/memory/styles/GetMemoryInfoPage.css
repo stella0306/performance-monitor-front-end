@@ -1,0 +1,153 @@
+/* =======================================
+   💾 memoryPage - 기본 레이아웃
+   ======================================= */
+
+.memory-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f0ff 0%, #fdfdfd 100%);
+  font-family: "Noto Sans KR", sans-serif;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* 헤더 영역 */
+.memory-header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.memory-header h1 {
+  font-size: 2.3rem;
+  color: #1f2b44;
+  margin-bottom: 8px;
+}
+
+.memory-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* 입력 폼 박스 */
+.memory-form {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.memory-input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.memory-input-group label {
+  font-weight: 600;
+  color: #333;
+  width: 45%;
+  text-align: left;
+}
+
+.memory-input-group input,
+.memory-input-group select {
+  width: 50%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.memory-input-group input:focus,
+.memory-input-group select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(43, 58, 85, 0.3);
+}
+
+/* 버튼 스타일 */
+.memory-button {
+  width: 100%;
+  background-color: #2b3a55;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.memory-button:hover {
+  background-color: #3f4d71;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(43, 58, 85, 0.3);
+}
+
+/* ===============================
+   🏠 홈으로 이동 버튼 스타일
+   =============================== */
+.memory-home-button {
+  width: 100%;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.memory-home-button:hover {
+  background-color: #3e8e41;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+
+/* =======================================
+   ✨ 애니메이션
+   ======================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,13 @@
+/* ===============================
+   🌐 기본 레이아웃
+   =============================== */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f0ff 0%, #fdfdfd 100%);
+  color: #2b3a55;
+  font-family: "Noto Sans KR", sans-serif;
+}
