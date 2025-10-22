@@ -22,6 +22,7 @@
 }
 
 /* 버튼별 색상 */
+/* cpu */
 .home-btn.cpu {
   background-color: #2b3a55;
 }
@@ -32,8 +33,9 @@
   box-shadow: 0 8px 20px rgba(43, 58, 85, 0.2);
 }
 
+/* 메모리 */
 .home-btn.memory {
-  background-color: #4caf50;
+  background-color: #6daf4c;
 }
 
 .home-btn.memory:hover {
@@ -42,6 +44,29 @@
   box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
 }
 
+/* 네트워크 */
+.home-btn.network {
+  background-color: #4c7faf;
+}
+
+.home-btn.network:hover {
+  background-color: #3f3e8e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 132, 175, 0.3);
+}
+
+/* 디스크 */
+.home-btn.disk {
+  background-color: #afa54c;
+}
+
+.home-btn.disk:hover {
+  background-color: #798e3e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(97, 175, 76, 0.3);
+}
+
+/* 깃허브 */
 .home-btn.github {
   background-color: #24292e;
 }

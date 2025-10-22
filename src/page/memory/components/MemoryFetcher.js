@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MemoryFieldList from "./MemoryFieldList";
 import "../styles/MemoryFetcher.css";
 
-const MemoryFetcher = ({ url, delay }) => {
+const MemoryFetcher = ({ url, delay, title, fields }) => {
   const [memoryData, setMemoryData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -31,7 +31,7 @@ const MemoryFetcher = ({ url, delay }) => {
     return <div className="memory-loading">⏳ 데이터를 불러오는 중...</div>;
   }
 
-  return <MemoryFieldList memoryData={memoryData} />;
+  return <MemoryFieldList title={title} fields={fields(memoryData)} />;
 };
 
 export default MemoryFetcher;

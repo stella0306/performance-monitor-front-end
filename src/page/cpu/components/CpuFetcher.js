@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CpuFieldList from "./CpuFieldList";
 import "../styles/CpuFetcher.css";
 
-const CpuFetcher = ({ url, delay }) => {
+const CpuFetcher = ({ url, delay, title, fields }) => {
   const [cpuData, setCpuData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -31,7 +31,8 @@ const CpuFetcher = ({ url, delay }) => {
     return <div className="cpu-loading">⏳ 데이터를 불러오는 중...</div>;
   }
 
-  return <CpuFieldList cpuData={cpuData} />;
+  return <CpuFieldList title={title} fields={fields(cpuData)} />;
+  
 };
 
 export default CpuFetcher;

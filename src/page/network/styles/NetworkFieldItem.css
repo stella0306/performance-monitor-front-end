@@ -1,0 +1,25 @@
+/* ===============================
+   📊 NetworkFieldItem - 개별 항목
+   =============================== */
+
+.network-field-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.network-field-item:hover {
+  background-color: #f8faff;
+}
+
+.network-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.network-value {
+  color: #0066cc;
+  font-weight: 600;
+}

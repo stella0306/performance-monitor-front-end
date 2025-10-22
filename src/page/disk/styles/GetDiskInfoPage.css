@@ -1,8 +1,8 @@
 /* =======================================
-   ⚙️ CpuPage - 기본 레이아웃
+   💽 diskPage - 기본 레이아웃
    ======================================= */
 
-.cpu-page {
+.disk-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,25 +14,25 @@
 }
 
 /* 헤더 영역 */
-.cpu-header {
+.disk-header {
   text-align: center;
   margin-bottom: 30px;
   animation: fadeInDown 0.8s ease forwards;
 }
 
-.cpu-header h1 {
+.disk-header h1 {
   font-size: 2.3rem;
   color: #1f2b44;
   margin-bottom: 8px;
 }
 
-.cpu-header p {
+.disk-header p {
   color: #555;
   font-size: 1.1rem;
 }
 
 /* 입력 폼 박스 */
-.cpu-form {
+.disk-form {
   background: white;
   border-radius: 10px;
   padding: 25px;
@@ -43,22 +43,22 @@
   animation: fadeInUp 1s ease forwards;
 }
 
-.cpu-input-group {
+.disk-input-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.cpu-input-group label {
+.disk-input-group label {
   font-weight: 600;
   color: #333;
   width: 45%;
   text-align: left;
 }
 
-.cpu-input-group input,
-.cpu-input-group select {
+.disk-input-group input,
+.disk-input-group select {
   width: 50%;
   padding: 8px 10px;
   border-radius: 8px;
@@ -67,14 +67,14 @@
   transition: box-shadow 0.2s ease;
 }
 
-.cpu-input-group input:focus,
-.cpu-input-group select:focus {
+.disk-input-group input:focus,
+.disk-input-group select:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(43, 58, 85, 0.3);
 }
 
 /* 버튼 스타일 */
-.cpu-button {
+.disk-button {
   width: 100%;
   background-color: #2b3a55;
   color: #fff;
@@ -87,7 +87,7 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.cpu-button:hover {
+.disk-button:hover {
   background-color: #3f4d71;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(43, 58, 85, 0.3);
@@ -96,7 +96,7 @@
 /* ===============================
    🏠 홈으로 이동 버튼 스타일
    =============================== */
-.cpu-home-button {
+.disk-home-button {
   width: 100%;
   background-color: #4caf50;
   color: #fff;
@@ -110,7 +110,7 @@
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.cpu-home-button:hover {
+.disk-home-button:hover {
   background-color: #3e8e41;
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);

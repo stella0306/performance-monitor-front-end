@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import CpuFetcher from "./components/CpuFetcher";
+import getCpuPercentFields from "./components/dataset/GetCpuPercentFields";
+import getCpuCountFields from "./components/dataset/GetCpuCountFields";
 import "./styles/GetCpuInfoPage.css";
 
 const GetCpuInfoPage = () => {
@@ -9,13 +11,19 @@ const GetCpuInfoPage = () => {
   const [interval, setIntervalValue] = useState(1);
   const [intervalState, setIntervalState] = useState("off");
   const [percpuState, setPercpuState] = useState("off");
+  const [logicalState, setLogicalState] = useState("off");
   const [delay, setDelay] = useState(2000);
-  const [url, setUrl] = useState("");
+  const [cpuPercentUrl, setCpuPercentUrl] = useState("");
+  const [cpuCountUrl, setCpuCountUrl] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const query = `interval=${interval}&interval_state=${intervalState}&percpu_state=${percpuState}`;
-    setUrl(`http://localhost:8000/system/api/cpu_percent?${query}`);
+    const CpuPercenQuery = `interval=${interval}&interval_state=${intervalState}&percpu_state=${percpuState}`;
+    const CpuCountQuery = `logical_state=${logicalState}`;
+
+    setCpuPercentUrl(`http://localhost:8000/system/api/cpu_percent?${CpuPercenQuery}`);
+    setCpuCountUrl(`http://localhost:8000/system/api/cpu_count?${CpuCountQuery}`);
   };
 
   return (
@@ -69,6 +77,17 @@ const GetCpuInfoPage = () => {
           </select>
         </div>
 
+        <div className="cpu-input-group">
+          <label>코어 개수</label>
+          <select
+            value={logicalState}
+            onChange={(e) => setLogicalState(e.target.value)}
+          >
+            <option value="on">논리 코어 포함</option>
+            <option value="off">논리 코어 미포함</option>
+          </select>
+        </div>
+
         {/* 데이터 조회 버튼 */}
         <button className="cpu-button" type="submit">
           🔍 데이터 조회
@@ -85,7 +104,8 @@ const GetCpuInfoPage = () => {
       </form>
 
       {/* 비동기 Fetch */}
-      {url && <CpuFetcher url={url} delay={delay} />}
+      {cpuPercentUrl && <CpuFetcher url={cpuPercentUrl} delay={delay} title="CPU PERCENT 정보" fields={getCpuPercentFields}/>}
+      {cpuCountUrl && <CpuFetcher url={cpuCountUrl} delay={delay} title="CPU COUNT 정보" fields={getCpuCountFields}/>}
     </div>
   );
 };

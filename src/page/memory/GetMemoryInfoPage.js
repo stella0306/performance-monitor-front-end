@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import MemoryFetcher from "./components/MemoryFetcher";
+import getVirtualMemoryFields from "./components/dataset/GetVirtualMemoryFields";
 import "./styles/GetMemoryInfoPage.css";
 
 const GetMemoryInfoPage = () => {
   const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
 
   const [delay, setDelay] = useState(2000);
-  const [url, setUrl] = useState("");
+  const [VirtualMemoryUrl, setVirtualMemoryUrl] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUrl(`http://localhost:8000/system/api/virtual_memory`);
+    setVirtualMemoryUrl(`http://localhost:8000/system/api/virtual_memory`);
   };
 
   return (
@@ -49,7 +50,7 @@ const GetMemoryInfoPage = () => {
       </form>
 
       {/* 비동기 Fetch */}
-      {url && <MemoryFetcher url={url} delay={delay} />}
+      {VirtualMemoryUrl && <MemoryFetcher url={VirtualMemoryUrl} delay={delay} title="MEMORY VIRTUALMEMORY 정보" fields={getVirtualMemoryFields}/>}
     </div>
   );
 };

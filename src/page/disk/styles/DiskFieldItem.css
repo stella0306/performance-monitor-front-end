@@ -1,0 +1,25 @@
+/* ===============================
+   📊 DiskFieldItem - 개별 항목
+   =============================== */
+
+.disk-field-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.disk-field-item:hover {
+  background-color: #f8faff;
+}
+
+.disk-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.disk-value {
+  color: #0066cc;
+  font-weight: 600;
+}

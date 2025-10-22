@@ -1,8 +1,8 @@
 /* ===============================
-   📋 MemoryFieldList - 데이터 목록
+   📋 DiskFieldList - 데이터 목록
    =============================== */
 
-.memory-fields {
+.disk-fields {
   background: white;
   border-radius: 10px;
   padding: 20px;
@@ -14,7 +14,7 @@
   animation: fadeInUp 1s ease forwards;
 }
 
-.memory-fields h2 {
+.disk-fields h2 {
   text-align: center;
   margin-bottom: 15px;
   color: #1f2b44;
