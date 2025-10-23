@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import CpuFetcher from "./components/CpuFetcher";
-import getCpuPercentFields from "./components/dataset/GetCpuPercentFields";
-import getCpuCountFields from "./components/dataset/GetCpuCountFields";
+import getCpuPercentFields from "../config/fieldset/cpu/GetCpuPercentFields";
+import getCpuCountFields from "../config/fieldset/cpu/GetCpuCountFields";
+import serverURLConfig from "../config/ServerURLConfig";
 import "./styles/GetCpuInfoPage.css";
 
 const GetCpuInfoPage = () => {
@@ -22,8 +23,8 @@ const GetCpuInfoPage = () => {
     const CpuPercenQuery = `interval=${interval}&interval_state=${intervalState}&percpu_state=${percpuState}`;
     const CpuCountQuery = `logical_state=${logicalState}`;
 
-    setCpuPercentUrl(`http://localhost:8000/system/api/cpu_percent?${CpuPercenQuery}`);
-    setCpuCountUrl(`http://localhost:8000/system/api/cpu_count?${CpuCountQuery}`);
+    setCpuPercentUrl(`${serverURLConfig.cpu.cpu_percent_url}?${CpuPercenQuery}`);
+    setCpuCountUrl(`${serverURLConfig.cpu.cpu_count_url}?${CpuCountQuery}`);
   };
 
   return (

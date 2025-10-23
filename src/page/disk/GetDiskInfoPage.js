@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import DiskFetcher from "./components/DiskFetcher";
-import getDiskTestFields from "./components/dataset/GetDiskTestFields";
+import getDiskTestFields from "../config/fieldset/disk/GetDiskTestFields";
+import serverURLConfig from "../config/ServerURLConfig";
 import "./styles/GetDiskInfoPage.css";
 
 const GetDiskInfoPage = () => {
@@ -12,7 +13,7 @@ const GetDiskInfoPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDiskTestUrl(`http://localhost:8000/system/api/virtual_memory`);
+    setDiskTestUrl(`${serverURLConfig.disk.virtual_memory}`);
   };
 
   return (

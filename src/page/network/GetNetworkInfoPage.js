@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import NetworkFetcher from "./components/NetworkFetcher";
-import getNetIoCountersUrlFields from "./components/dataset/GetNetIoCountersUrlFields";
+import getNetIoCountersUrlFields from "../config/fieldset/network/GetNetIoCountersUrlFields";
+import serverURLConfig from "../config/ServerURLConfig";
 import "./styles/GetNetworkInfoPage.css";
 
 const GetNetworkInfoPage = () => {
@@ -12,7 +13,7 @@ const GetNetworkInfoPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNetIoCountersUrl(`http://localhost:8000/system/api/net_io_counters`);
+    setNetIoCountersUrl(`${serverURLConfig.network.net_io_counters}`);
   };
 
   return (

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import MemoryFetcher from "./components/MemoryFetcher";
-import getVirtualMemoryFields from "./components/dataset/GetVirtualMemoryFields";
+import getVirtualMemoryFields from "../config/fieldset/memory/GetVirtualMemoryFields";
+import serverURLConfig from "../config/ServerURLConfig";
 import "./styles/GetMemoryInfoPage.css";
 
 const GetMemoryInfoPage = () => {
@@ -12,7 +13,7 @@ const GetMemoryInfoPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setVirtualMemoryUrl(`http://localhost:8000/system/api/virtual_memory`);
+    setVirtualMemoryUrl(`${serverURLConfig.memory.virtual_memory}`);
   };
 
   return (
