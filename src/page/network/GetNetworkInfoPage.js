@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import NetworkFetcher from "./components/NetworkFetcher";
-import getNetworkTestFields from "./components/dataset/GetNetworkTestFields";
+import getNetIoCountersUrlFields from "./components/dataset/GetNetIoCountersUrlFields";
 import "./styles/GetNetworkInfoPage.css";
 
 const GetNetworkInfoPage = () => {
   const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
 
-  const [delay, setDelay] = useState(2000);
-  const [networkTestUrl, setNetworkTestUrl] = useState("");
+  const [delay, setDelay] = useState(1000);
+  const [netIoCountersUrl, setNetIoCountersUrl] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNetworkTestUrl(`http://localhost:8000/system/api/virtual_memory`);
+    setNetIoCountersUrl(`http://localhost:8000/system/api/net_io_counters`);
   };
 
   return (
     <div className="network-page">
       <header className="network-header">
-        <h1>🛜 NETWORK 모니터링 - 백엔드 서버 개발 중 이라서 MEMORY 사용량으로 대체됐습니다.</h1>
+        <h1>🛜 NETWORK 모니터링</h1>
         <p>실시간 NETWORK 사용률과 시스템 상태를 시각화합니다.</p>
       </header>
 
@@ -50,8 +50,7 @@ const GetNetworkInfoPage = () => {
       </form>
 
       {/* 비동기 Fetch */}
-      {networkTestUrl && <NetworkFetcher url={networkTestUrl} delay={delay} title="NETWORK TEST 정보" fields={getNetworkTestFields} />}
-      
+      {netIoCountersUrl && <NetworkFetcher url={netIoCountersUrl} delay={delay} title="NETWORK NETIOCOUNTERS 정보" fields={getNetIoCountersUrlFields} />}
     </div>
   );
 };

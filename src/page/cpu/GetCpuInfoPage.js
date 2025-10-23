@@ -12,7 +12,7 @@ const GetCpuInfoPage = () => {
   const [intervalState, setIntervalState] = useState("off");
   const [percpuState, setPercpuState] = useState("off");
   const [logicalState, setLogicalState] = useState("off");
-  const [delay, setDelay] = useState(2000);
+  const [delay, setDelay] = useState(1000);
   const [cpuPercentUrl, setCpuPercentUrl] = useState("");
   const [cpuCountUrl, setCpuCountUrl] = useState("");
 

@@ -7,7 +7,7 @@ import "./styles/GetMemoryInfoPage.css";
 const GetMemoryInfoPage = () => {
   const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
 
-  const [delay, setDelay] = useState(2000);
+  const [delay, setDelay] = useState(1000);
   const [VirtualMemoryUrl, setVirtualMemoryUrl] = useState("");
 
   const handleSubmit = (e) => {
