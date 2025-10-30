@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
+import { useNavigate } from "react-router-dom"; // 홈 이동용
 import DiskFetcher from "./components/DiskFetcher";
-import getDiskUsageFields from "../config/fieldset/disk/GetDiskUsageFields";
-import serverURLConfig from "../config/ServerURLConfig";
+import getDiskUsageFields from "../config/fieldset/disk/getDiskUsageFields";
+import serverURLConfig from "../config/serverURLConfig";
 import "./styles/GetDiskInfoPage.css";
 
 const GetDiskInfoPage = () => {
-  const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
+  const navigate = useNavigate(); // 페이지 이동 함수 생성
 
   const [delay, setDelay] = useState(1000);
   const [diskUsageUrl, setDiskUsageUrl] = useState("");

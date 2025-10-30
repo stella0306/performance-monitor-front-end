@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import CpuFieldList from "./CpuFieldList";
-import "../styles/CpuFetcher.css";
+import CPUFieldList from "./CPUFieldList";
+import "../styles/CPUFetcher.css";
 
-const CpuFetcher = ({ url, delay, title, fields }) => {
-  const [cpuData, setCpuData] = useState(null);
+const CPUFetcher = ({ url, delay, title, fields }) => {
+  const [cpuData, setCPUData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchCpu() {
+    async function fetchCPU() {
       try {
         const res = await fetch(url);
         const data = await res.json();
-        setCpuData(data);
+        setCPUData(data);
         setError(null);
       } catch (err) {
         setError(err.message);
       }
     }
 
-    fetchCpu();
-    const id = setInterval(fetchCpu, delay);
+    fetchCPU();
+    const id = setInterval(fetchCPU, delay);
     return () => clearInterval(id);
   }, [url, delay]);
 
@@ -31,8 +31,8 @@ const CpuFetcher = ({ url, delay, title, fields }) => {
     return <div className="cpu-loading">⏳ 데이터를 불러오는 중...</div>;
   }
 
-  return <CpuFieldList title={title} fields={fields(cpuData)} />;
+  return <CPUFieldList title={title} fields={fields(cpuData)} />;
   
 };
 
-export default CpuFetcher;
+export default CPUFetcher;

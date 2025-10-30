@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
+import { useNavigate } from "react-router-dom"; // 홈 이동용
 import MemoryFetcher from "./components/MemoryFetcher";
-import getVirtualMemoryFields from "../config/fieldset/memory/GetVirtualMemoryFields";
-import serverURLConfig from "../config/ServerURLConfig";
+import getVirtualMemoryFields from "../config/fieldset/memory/getVirtualMemoryFields";
+import serverURLConfig from "../config/serverURLConfig";
 import "./styles/GetMemoryInfoPage.css";
 
 const GetMemoryInfoPage = () => {
-  const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
+  const navigate = useNavigate(); // 페이지 이동 함수 생성
 
   const [delay, setDelay] = useState(1000);
   const [VirtualMemoryUrl, setVirtualMemoryUrl] = useState("");

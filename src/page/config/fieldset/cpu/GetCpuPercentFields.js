@@ -1,4 +1,4 @@
-const getCpuPercentFields = ( cpuData ) => {
+const getCPUPercentFields = ( cpuData ) => {
   if (!cpuData) {
     return [{ label: "데이터 없음", value: "서버 응답이 비어 있습니다." }];
   }
@@ -16,4 +16,4 @@ const getCpuPercentFields = ( cpuData ) => {
   ];
 };
 
-export default getCpuPercentFields;
+export default getCPUPercentFields;

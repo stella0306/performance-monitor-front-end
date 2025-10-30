@@ -1,16 +1,16 @@
 import React from "react";
-import CpuFieldItem from "./CpuFieldItem";
-import "../styles/CpuFieldList.css";
+import CPUFieldItem from "./CPUFieldItem";
+import "../styles/CPUFieldList.css";
 
-const CpuFieldList = ({ title, fields = [] }) => {
+const CPUFieldList = ({ title, fields = [] }) => {
   return (
     <div className="cpu-fields">
       <h2>🧩 {title}</h2>
       {fields.map((f) => (
-        <CpuFieldItem key={f.label} label={f.label} value={f.value} />
+        <CPUFieldItem key={f.label} label={f.label} value={f.value} />
       ))}
     </div>
   );
 };
 
-export default CpuFieldList;
+export default CPUFieldList;
