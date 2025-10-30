@@ -1,6 +1,6 @@
 const getCpuCountFields = ( cpuData ) => {
   if (!cpuData) {
-    return [];
+    return [{ label: "데이터 없음", value: "서버 응답이 비어 있습니다." }];
   }
 
   return [

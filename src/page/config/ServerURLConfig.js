@@ -11,7 +11,7 @@ const serverURLConfig = {
         "net_io_counters": "http://localhost:8000/system/network/net_io_counters"
     },
     "disk": {
-        "virtual_memory": "http://localhost:8000/system/memory/virtual_memory" // disk 서버가 개발되기 전까지 임시 URL로 사용함.
+        "disk_usage": "http://localhost:8000/system/disk/disk_usage" // disk 서버가 개발되기 전까지 임시 URL로 사용함.
     }
 };
 

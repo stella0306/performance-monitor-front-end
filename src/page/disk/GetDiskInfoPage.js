@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ 홈 이동용
 import DiskFetcher from "./components/DiskFetcher";
-import getDiskTestFields from "../config/fieldset/disk/GetDiskTestFields";
+import getDiskUsageFields from "../config/fieldset/disk/GetDiskUsageFields";
 import serverURLConfig from "../config/ServerURLConfig";
 import "./styles/GetDiskInfoPage.css";
 
@@ -9,17 +9,17 @@ const GetDiskInfoPage = () => {
   const navigate = useNavigate(); // ✅ 페이지 이동 함수 생성
 
   const [delay, setDelay] = useState(1000);
-  const [diskTestUrl, setDiskTestUrl] = useState("");
+  const [diskUsageUrl, setDiskUsageUrl] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDiskTestUrl(`${serverURLConfig.disk.virtual_memory}`);
+    setDiskUsageUrl(`${serverURLConfig.disk.disk_usage}`);
   };
 
   return (
     <div className="disk-page">
       <header className="disk-header">
-        <h1>💽 DISK 모니터링 - 백엔드 서버 개발 중 이라서 MEMORY 사용량으로 대체됐습니다.</h1>
+        <h1>💽 DISK 모니터링</h1>
         <p>실시간 DISK 사용률과 시스템 상태를 시각화합니다.</p>
       </header>
 
@@ -51,7 +51,7 @@ const GetDiskInfoPage = () => {
       </form>
 
       {/* 비동기 Fetch */}
-      {diskTestUrl && <DiskFetcher url={diskTestUrl} delay={delay} title="DISK TEST 정보" fields={getDiskTestFields} />}
+      {diskUsageUrl && <DiskFetcher url={diskUsageUrl} delay={delay} title="DISK USAGE 정보" fields={getDiskUsageFields} />}
     </div>
   );
 };
